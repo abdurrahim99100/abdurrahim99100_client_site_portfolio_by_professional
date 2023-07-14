@@ -4,6 +4,7 @@ import AboutMe from "../Pages/Home/AboutMe/AboutMe";
 import Banner from "../Pages/Home/Banner/Banner";
 import Skills from "../Pages/Home/Skills/Skills";
 import Project from "../Pages/Home/Project/Project";
+import Contact from "../Pages/Home/Contact/Contact";
 
 
 const Layout = () => {
@@ -14,7 +15,8 @@ const Layout = () => {
             <AboutMe></AboutMe>
             <Skills></Skills>
             <Project></Project>
-            <Footer></Footer>
+            {/* <Contact></Contact> */}
+            {/* <Footer></Footer> */}
         </div>
     );
 };

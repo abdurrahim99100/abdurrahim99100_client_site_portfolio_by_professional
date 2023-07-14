@@ -1,0 +1,11 @@
+.box-container {
+    background-image: url('../../../assets/project-photos/career-hub.png');
+    background-size: cover;
+    background-position: top;
+    width: 600px;
+    height: 400px;
+    transition: all 2s linear;
+}
+.box-container:hover{
+    background-position: bottom;
+}

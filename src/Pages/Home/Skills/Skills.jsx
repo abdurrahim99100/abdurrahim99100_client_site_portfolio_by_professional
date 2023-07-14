@@ -1,15 +1,15 @@
 
 const Skills = () => {
     return (
-        <div className="h-[100vh] flex items-center justify-center" id="skill">
-            <div>
+        <div className="px-5 mt-14 lg:mt-0" id="skill">
+            <div className="lg:h-[100vh] flex flex-col justify-center items-center">
                 <div className="flex flex-col items-center font-semibold text-4xl">
                     <h3>Skills</h3>
                     <progress className="progress bg-[#15E0B7] w-32 h-[5px]"></progress>
                 </div>
                 <div>
-                    <div className='flex-none md:flex justify-between px-20 mt-12'>
-                        <ul className="grid grid-cols-3 gap-10">
+                    <div className='flex-none md:flex justify-between mt-10'>
+                        <ul className="grid lg:grid-cols-3 gap-10">
                             <li className='flex gap-2 items-center'>
                                 <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/bBCmxYS/html-5-1.png" alt="" />
                                 <div>
