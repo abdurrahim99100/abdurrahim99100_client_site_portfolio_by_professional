@@ -2,6 +2,8 @@ import NavBar from "../Pages/Shared/NavBar/NavBar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import AboutMe from "../Pages/Home/AboutMe/AboutMe";
 import Banner from "../Pages/Home/Banner/Banner";
+import Skills from "../Pages/Home/Skills/Skills";
+import Project from "../Pages/Home/Project/Project";
 
 
 const Layout = () => {
@@ -10,6 +12,8 @@ const Layout = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <AboutMe></AboutMe>
+            <Skills></Skills>
+            <Project></Project>
             <Footer></Footer>
         </div>
     );

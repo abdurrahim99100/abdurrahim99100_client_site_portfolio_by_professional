@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="flex gap-20 items-end p-10 max-w-screen-2xl mx-auto pt-36" id="#">
+        <div className="h-[100vh] flex items-center" id="#">
+            <div className="flex gap-20 items-end p-10 max-w-screen-2xl mx-auto pt-36">
             <div>
-                <h3 className='text-5xl text-[#15E0B7] font-semibold'>Hi, <br /> I'm Abdur Rahim</h3>
+                <h3 className='text-5xl text-[#15E0B7] font-semibold'>Hi, <br /> I am Abdur Rahim</h3>
                 <div className='flex gap-2 items-center'>
                     <h3 className='text-4xl font-semibold text-[#F67280]'> AS A</h3>
                     <TypeAnimation
@@ -56,6 +57,7 @@ const Banner = () => {
             <div className="">
                 <img className="w-[1000px]" src="https://i.ibb.co/pw13101/young-bearded-man-with-striped-shirt-removebg-preview-2.png" alt="" />
             </div>
+        </div>
         </div>
     );
 };
