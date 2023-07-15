@@ -1,4 +1,30 @@
 .box-container {
+    background-image: url('../../../assets/project-photos/career-hub-design.png');
+    background-size: cover;
+    background-position: top;
+    width: 320px;
+    height: 400px;
+    transition: all 3s linear;
+}
+
+.box-container:hover {
+    background-position: bottom;
+}
+
+.box-container2 {
+    background-image: url('../../../assets/project-photos/toy-car.png');
+    background-size: cover;
+    background-position: top;
+    width: 320px;
+    height: 400px;
+    transition: all 3s linear;
+}
+
+.box-container2:hover {
+    background-position: bottom;
+}
+
+.box-container3 {
     background-image: url('../../../assets/project-photos/career-hub.png');
     background-size: cover;
     background-position: top;
@@ -6,6 +32,7 @@
     height: 400px;
     transition: all 3s linear;
 }
-.box-container:hover{
+
+.box-container3:hover {
     background-position: bottom;
 }
