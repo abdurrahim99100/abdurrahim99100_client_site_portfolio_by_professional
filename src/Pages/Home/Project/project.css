@@ -2,9 +2,9 @@
     background-image: url('../../../assets/project-photos/career-hub.png');
     background-size: cover;
     background-position: top;
-    width: 600px;
+    width: 320px;
     height: 400px;
-    transition: all 2s linear;
+    transition: all 3s linear;
 }
 .box-container:hover{
     background-position: bottom;
