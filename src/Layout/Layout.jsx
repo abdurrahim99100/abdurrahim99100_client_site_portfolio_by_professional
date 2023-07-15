@@ -15,8 +15,8 @@ const Layout = () => {
             <AboutMe></AboutMe>
             <Skills></Skills>
             <Project></Project>
-            {/* <Contact></Contact> */}
-            {/* <Footer></Footer> */}
+            <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 };
