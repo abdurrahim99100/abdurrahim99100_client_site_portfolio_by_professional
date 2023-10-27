@@ -1,34 +1,71 @@
 import { FaPhoneSquareAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+
 const Contact = () => {
+
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        console.log(data)
+    }
+
     return (
         <div className="container mx-auto" id="contact">
             <div className="h-[100vh] flex flex-col justify-center px-5">
-                <div className="flex flex-col items-center font-semibold text-4xl">
+                <div data-aos="zoom-in"
+                    data-aos-duration="1800"
+                    className="flex flex-col items-center font-semibold text-4xl">
                     <h3>Contact Me</h3>
                     <progress className="progress bg-[#15E0B7] w-[220px] h-[5px]"></progress>
                     <p className="my-5 font-light text-[#15E0B7] text-xl font-sans">Get in Touch</p>
                 </div>
                 <div className="flex-none lg:flex lg:flex-row-reverse lg:justify-between lg:items-end lg:gap-[300px] lg:mt-10">
-                    <div className="grid grid-cols-1 gap-4 text-black w-full">
-                        <input type="name" name="name" placeholder="Name"
-                            className="input input-success" />
-                        <input type="email" name="email" placeholder="Email" className="input input-success" />
-                        <input type="subject" name="subject" placeholder="Subject" className="input input-success" />
-                        <textarea type='text' name="text" className="textarea textarea-accent" placeholder="Message"></textarea>
-                        <div className="flex btn btn-accent w-[150px] rounded-r-full">
-                            <button className="uppercase">send</button>
-                            <span>
-                                <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </span>
+                    <form
+                        onSubmit={handleSubmit(onSubmit)}
+                        data-aos="fade-up"
+                        data-aos-duration="1800"
+                        className="grid grid-cols-1 gap-4 text-black w-full"
+                    >
+                        <input
+                            type="name" name="name" placeholder="Name"
+                            className="input input-success"
+                            {...register("name")}
+                        />
+                        <input
+                            type="email" name="email" placeholder="Email"
+                            className="input input-success"
+                            {...register("email")}
+                        />
+                        <input
+                            type="subject" name="subject" placeholder="Subject"
+                            className="input input-success"
+                            {...register("subject")}
+                        />
+                        <textarea
+                            type='text' name="details" placeholder="Message"
+                            className="textarea textarea-accent"
+                            {...register("details")}
+                        ></textarea>
+
+                        <div>
+                            <button type="submit"
+                                className="flex btn btn-accent w-[150px] rounded-r-full"
+                            >
+                                <span>
+                                    <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                                </span>
+                                SEND
+                            </button>
                         </div>
-                    </div>
-                    <div className="mt-10 lg:mt-0">
+                    </form>
+                    <div data-aos="fade-up"
+                        data-aos-duration="1800"
+                        className="mt-10 lg:mt-0">
                         <div className="flex items-center gap-4">
                             <span className="border-2 border-[#15E0B7] text-2xl p-2 rounded-full"><FaPhoneSquareAlt /></span>
                             <div>
                                 <p className="text-3xl font-bold text-[#15E0B7]">Phone :</p>
                                 <p className="text-xl font-light">+8801580590037</p>
-                                <p className="text-xl font-light">+8801857400322</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 my-5">

@@ -11,6 +11,7 @@ import {
 import Home from './Pages/Home/Home/Home';
 import BlogHome from './Pages/Blog/BlogHome/BlogHome';
 import CssDetails from './Pages/Blog/Css/CssDetails';
+import BlogLayout from './Layout/BlogLayout';
 
 const router = createBrowserRouter([
   {
@@ -21,13 +22,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
-      },
+      }
+    ]
+  },
+  {
+    path: "/",
+    element: <BlogLayout></BlogLayout>,
+    errorElement: <div>error</div>,
+    children: [
       {
         path: "blog",
-        element: <BlogHome></BlogHome>,
+        element: <BlogHome></BlogHome>
       },
       {
-        path: "cssdetails",
+        path: "cssDetails",
         element: <CssDetails></CssDetails>
       }
     ]

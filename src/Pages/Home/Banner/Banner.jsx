@@ -2,22 +2,30 @@ import { TypeAnimation } from "react-type-animation";
 import { FaLinkedin, FaGithubSquare, FaTwitterSquare, FaFacebookSquare, FaRavelry } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-
+// aos style import;
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 const Banner = () => {
     return (
-        <div className="h-auto lg:h-[100vh]" id="#">
+        <div data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="h-auto lg:h-[100vh]" id="#">
             <div className="h-auto lg:h-[65vh] pt-24 lg:pt-36 px-5 lg:container lg:mx-auto flex-none lg:flex lg:justify-between lg:items-end lg:flex-row-reverse">
-                <div className="">
-                    <img className="w-[350px] lg:w-[550px]" src="https://i.ibb.co/pw13101/young-bearded-man-with-striped-shirt-removebg-preview-2.png" alt="" />
+                <div className="flex justify-center">
+                    <img className="rounded-full w-[150px] lg:w-[350px] h-[150px] lg:h-[350px] border-4 border-teal-400 border-color: rgb(45 212 191)" 
+                    src="https://i.ibb.co/b5yCbcB/IMG20231016110251.jpg" alt="" />
                 </div>
                 <div className="w-auto lg:w-7/12">
                     <h3 className='text-xl lg:text-5xl text-[#15E0B7] font-semibold'>Hi, <br /> I am Abdur Rahim</h3>
                     <div className='flex gap-2 items-center'>
-                        <span className='font-semibold text-[#F67280] text-sm lg:text-5xl'>AS A</span>
+                        <span className='font-semibold text-[#F67280] text-sm lg:text-4xl'>AS A</span>
                         <TypeAnimation
-                            className='font-semibold text-[#15E0B7] text-sm lg:text-5xl'
+                            className='font-semibold text-[#15E0B7] text-sm lg:text-4xl'
                             sequence={[
                                 'WEB DEVELOPER!',
                                 500,
@@ -121,7 +129,7 @@ const Banner = () => {
                     </div>
                 </Marquee>
             </div>
-            
+
         </div>
     );
 };
