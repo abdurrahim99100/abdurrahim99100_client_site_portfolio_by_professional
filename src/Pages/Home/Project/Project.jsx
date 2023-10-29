@@ -1,7 +1,7 @@
 import './project.css';
 const Project = () => {
     return (
-        <div className='container mx-auto' id="project">
+        <div className='container mx-auto mt-10' id="project">
             <div className="lg:h-[100vh] flex flex-col justify-center items-center">
                 <div data-aos="zoom-in"
                     data-aos-duration="1800"

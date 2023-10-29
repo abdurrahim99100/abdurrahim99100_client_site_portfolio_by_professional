@@ -12,6 +12,7 @@ import Home from './Pages/Home/Home/Home';
 import BlogHome from './Pages/Blog/BlogHome/BlogHome';
 import CssDetails from './Pages/Blog/Css/CssDetails';
 import BlogLayout from './Layout/BlogLayout';
+import Post from './Pages/Post/Post';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "post",
+        element: <Post />
       }
     ]
   },

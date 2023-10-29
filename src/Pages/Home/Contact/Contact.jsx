@@ -6,12 +6,31 @@ const Contact = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        console.log(data)
-    }
+        const { name, email, message, subject } = data;
+        const contactData = { name, email, message, subject };
+        // console.log(contactData);
+        const url = 'https://abdurrahim99100-protfolio-server-j47tj1tqw-abdurrahim99100.vercel.app/contact'
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(contactData)
+        })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then()
+            .catch(error => console.log(error))
+    };
+
 
     return (
         <div className="container mx-auto" id="contact">
-            <div className="h-[100vh] flex flex-col justify-center px-5">
+            <div className="mt-10 lg:mt-0 lg:h-[100vh] flex flex-col justify-center px-5">
                 <div data-aos="zoom-in"
                     data-aos-duration="1800"
                     className="flex flex-col items-center font-semibold text-4xl">
@@ -24,10 +43,9 @@ const Contact = () => {
                         onSubmit={handleSubmit(onSubmit)}
                         data-aos="fade-up"
                         data-aos-duration="1800"
-                        className="grid grid-cols-1 gap-4 text-black w-full"
-                    >
+                        className="grid grid-cols-1 gap-4 text-black w-full">
                         <input
-                            type="name" name="name" placeholder="Name"
+                            type="text" name="name" placeholder="Name"
                             className="input input-success"
                             {...register("name")}
                         />
@@ -42,9 +60,9 @@ const Contact = () => {
                             {...register("subject")}
                         />
                         <textarea
-                            type='text' name="details" placeholder="Message"
+                            type='text' name="message" placeholder="Message"
                             className="textarea textarea-accent"
-                            {...register("details")}
+                            {...register("message")}
                         ></textarea>
 
                         <div>

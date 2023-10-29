@@ -27,6 +27,9 @@ const NavBar = () => {
             <li className="visited-link">
                 <Link to='blog'>blog</Link>
             </li>
+            <li className="visited-link">
+                <Link to='post'>post</Link>
+            </li>
             {
                 user ?
                     <>
