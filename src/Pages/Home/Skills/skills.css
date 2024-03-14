@@ -1,0 +1,60 @@
+.skillContainer{
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   background-color: rgba(92, 91, 91, 0.075);
+   padding: 5px;
+   border-radius: 4px;
+}
+
+.skillImage{
+    width: 50px;
+    height: 50;
+}
+
+.skillValue{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.paginationButton button{
+    background: rgba(0, 0, 0, 0.726);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .skillImage{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .skillValue{
+        font-weight: 600;
+    }
+}
+@media (max-width: 768px) {
+    .skillImage{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .skillValue{
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+@media (max-width: 640px) {
+    .skillImage{
+        width: 55px;
+        height: 55px;
+    }
+    
+    .skillValue{
+        font-size: 18px;
+        font-weight: 700;
+    }
+}

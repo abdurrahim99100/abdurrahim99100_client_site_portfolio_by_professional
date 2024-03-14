@@ -1,185 +1,161 @@
+import { useState, useEffect } from "react";
+import "./skills.css";
+import Marquee from "react-fast-marquee";
 
 const Skills = () => {
-    return (
-        <div className="px-5 mt-14 lg:mt-0" id="skill">
-            <div className="lg:h-[100vh] flex flex-col justify-center items-center">
-                <div data-aos="zoom-in"
-                    data-aos-duration="1900"
-                    className="flex flex-col items-center font-semibold text-4xl">
-                    <h3>Skills</h3>
-                    <progress className="progress bg-[#15E0B7] w-32 h-[5px]"></progress>
-                </div>
-                <div>
-                    <div className='flex-none md:flex justify-between mt-10'>
-                        <ul className="grid lg:grid-cols-3 gap-10">
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/bBCmxYS/html-5-1.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7] uppercase'>html : 92%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="92" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/kSmRbpy/css.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7] uppercase'>css : 83%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="83" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/MGr3ty7/bootstrap-1.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>Bootstrap : 75%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="92" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/j6gS06K/tailwind-css.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>Tailwind : 86%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="92" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/kM2YzRW/daisy-ui.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>DaisyUI : 94%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="92" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/xH0WHKR/figma.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>Figma : 70%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="92" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/ss6wbTz/icons8-javascript-480.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>JavaScript : 74%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="74" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/X8pzydm/node-js-1.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'> NodeJs : 62%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="62" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/WGLcfsv/firebase.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7] '>Firebase : 79%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="79" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/0s1F6wN/mongodb.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>MongoDB : 71%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="71" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/KVrQd1m/physics.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>React : 72%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="72" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/FzwKk11/github.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>GitHub : 62%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="62" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/0G071Bp/icons8-express-js-500.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>ExpressJs : 52%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="62" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/b2yKGC1/icons8-jwt-480.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>JWT : 52%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="62" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/VQX7ZxF/4691413-netlify-icon.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>Netlify : 62%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="62" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/rb6k99Z/vercel-brand-icon-211876.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>Vercel : 52%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="52" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/SRQF3sn/icons8-rest-api-100.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>API : 77%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="77" max="100"></progress>
-                                </div>
-                            </li>
-                            <li data-aos="fade-up"
-                                data-aos-duration="1800"
-                                className='flex gap-2 items-center'>
-                                <img className='w-20 h-20 bg-gray-700 rounded p-2' src="https://i.ibb.co/2ZRZLS5/icons8-npm-480.png" alt="" />
-                                <div>
-                                    <p className='text-xl font-semibold text-[#15E0B7]'>NPM : 52%</p>
-                                    <progress className="progress progress-accent w-56 bg-white" value="52" max="100"></progress>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  const [skills, setSkills] = useState([]);
+  const itemsPerPage = 10;
+  let currentPage = 1;
+
+  // FETCH DATA;
+  useEffect(() => {
+    fetch("skills.json")
+      .then((res) => res.json())
+      .then((data) => setSkills(data));
+  }, []);
+
+  console.log(skills);
+
+  useEffect(() => {
+    renderPagination();
+  }, [skills]); // Run the pagination logic whenever skills data changes
+
+  // pagination code;
+  const displayData = (page) => {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedData = skills.slice(startIndex, endIndex);
+
+    const dataContainer = document.getElementById("dataContainer");
+    if (dataContainer) {
+      dataContainer.innerHTML = ""; // Clear existing data
+
+      paginatedData.forEach((item) => {
+        const listItem = document.createElement("div");
+        listItem.innerHTML = `
+        <div class="skillContainer">
+        <img class="skillImage" src=${item.picture} alt="" />
+        <p class="skillValue">${item.name} ${item.value}%</p>
         </div>
-    );
+        `;
+        dataContainer.appendChild(listItem);
+      });
+    }
+  };
+
+  const renderPagination = () => {
+    const totalPages = Math.ceil(skills.length / itemsPerPage);
+    const paginationContainer = document.getElementById("pagination");
+    if (paginationContainer) {
+      paginationContainer.innerHTML = ""; // Clear existing pagination
+
+      for (let i = 1; i <= totalPages; i++) {
+        const listItem = document.createElement("li");
+        const link = document.createElement("button");
+        link.href = "#";
+        link.textContent = i;
+        if (i === currentPage) {
+          link.classList.add("active");
+        }
+        listItem.appendChild(link);
+        paginationContainer.appendChild(listItem);
+
+        link.addEventListener("click", () => {
+          currentPage = i;
+          displayData(currentPage);
+          updateActiveLink();
+        });
+
+        displayData(currentPage);
+      }
+
+      const updateActiveLink = () => {
+        const paginationLinks = document.querySelectorAll(
+          ".pagination li button"
+        );
+        paginationLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (parseInt(link.textContent) === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      };
+    }
+  };
+
+  return (
+    <div className="px-5 sm:px-0 mt-14 lg:pt-[150px]" id="skill">
+      <div className="container mx-auto flex flex-col">
+        <div
+          data-aos="zoom-in"
+          data-aos-duration="1900"
+          className="text-center font-bold uppercase text-4xl"
+        >
+          <h3>my skills</h3>
+        </div>
+        <div className="sm:flex sm:gap-x-5 justify-between mt-3 sm:mt-10">
+          <div className="text-md sm:w-[50%] h-[460px] overflow-y-scroll scrollbar">
+            <span className="uppercase text-lg font-bold">skills details</span>
+            <p className="">
+              With proficiency in HTML, CSS, and JavaScript, as well as
+              frameworks like React and Next.js, I bring a comprehensive skill
+              set to web development projects. Leveraging Bootstrap and Tailwind
+              for responsive designs, I ensure optimal user experiences across
+              devices. My expertise extends to backend development using
+              Node.js, Express.js, MongoDB, and Firebase for robust server-side
+              operations and database management.
+            </p>
+            <br />
+            <p>
+              In the realm of design, I employ Figma for intuitive UI/UX
+              creation, ensuring seamless interaction flows. With version
+              control through GitHub, I maintain organized and collaborative
+              development processes. My grasp of authentication mechanisms,
+              including JWT, enhances security measures within applications.
+            </p>
+            <br />
+            <p>
+              Deploying applications seamlessly is a priority, utilizing
+              platforms like Netlify for frontend hosting and Express.js for
+              backend deployment. This holistic approach streamlines the
+              development lifecycle, from conceptualization to deployment.
+            </p>
+            <br />
+            <p>
+              Overall, I bring a versatile skill set and a commitment to
+              excellence in web development, combining frontend aesthetics with
+              backend functionality to deliver dynamic and efficient digital
+              solutions
+            </p>
+          </div>
+          <div className="flex flex-col justify-between w-[100%] sm:w-[390px] lg:w-[478px]">
+            <ul
+              className="grid sm:grid-cols-2 sm:gap-x-10 gap-y-3 sm:gap-y-0 h-[85%] my-5"
+              id="dataContainer"
+            ></ul>
+            {/* PAGINATION BUTTON */}
+            <ul
+              className="flex justify-center gap-2 paginationButton"
+              id="pagination"
+            ></ul>
+          </div>
+        </div>
+      </div>
+      {/* marquise */}
+      <Marquee className="mt-10">
+        {skills.map((skill, index) => (
+          <div key={index} value={skill} className="mr-[40px] lg:mr-[100px] ">
+            <img
+              className="w-[55px] md:w-[85px] p-2 bg-[#645b5b2f] border-2 border-[#58414128] rounded shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)]"
+              src={skill.picture}
+              alt=""
+            />
+            <p className="text-[8px] md:text-sm text-center uppercase font-light sg:font-mono text-blue-400">{skill.name}</p>
+          </div>
+        ))}
+      </Marquee>
+    </div>
+  );
 };
 
 export default Skills;

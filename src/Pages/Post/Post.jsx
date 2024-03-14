@@ -5,12 +5,14 @@ const Post = () => {
 
     const [posts, setPosts] = useState();
 
+    const url = "https://abdurrahimportfolioserver.up.railway.app/contacts"
+
     useEffect(() => {
-        fetch('https://abdurrahim99100-protfolio-server-j47tj1tqw-abdurrahim99100.vercel.app/contacts')
+        fetch(url)
             .then(res => res.json())
             .then(data => setPosts(data))
             .catch(error => console.log(error))
-    }, [])
+    }, []);
 
     return (
         <div className="pt-20 w-[500px] mx-auto">
