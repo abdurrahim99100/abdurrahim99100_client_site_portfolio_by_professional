@@ -14,7 +14,6 @@ const Skills = () => {
       .then((data) => setSkills(data));
   }, []);
 
-  console.log(skills);
 
   useEffect(() => {
     renderPagination();
@@ -96,7 +95,7 @@ const Skills = () => {
         <div className="sm:flex sm:gap-x-5 justify-between mt-3 sm:mt-10">
           <div className="text-md sm:w-[50%] h-[460px] overflow-y-scroll scrollbar">
             <span className="uppercase text-lg font-bold">skills details</span>
-            <p className="">
+            <p>
               With proficiency in HTML, CSS, and JavaScript, as well as
               frameworks like React and Next.js, I bring a comprehensive skill
               set to web development projects. Leveraging Bootstrap and Tailwind

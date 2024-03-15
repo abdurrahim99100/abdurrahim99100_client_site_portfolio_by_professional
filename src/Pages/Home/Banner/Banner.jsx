@@ -19,7 +19,6 @@ AOS.init();
 
 const Banner = () => {
   return (
-    // TODO remove background color
     <div
       data-aos="fade-down"
       data-aos-easing="linear"
