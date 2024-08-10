@@ -93,7 +93,7 @@ const Skills = () => {
           <h3>my skills</h3>
         </div>
         <div className="sm:flex sm:gap-x-5 justify-between mt-3 sm:mt-10">
-          <div className="text-md sm:w-[50%] h-[460px] overflow-y-scroll scrollbar">
+          <div className="text-[18px] sm:w-[50%] h-[460px] overflow-y-scroll scrollbar">
             <span className="uppercase text-lg font-bold">skills details</span>
             <p>
               With proficiency in HTML, CSS, and JavaScript, as well as
@@ -145,7 +145,7 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <div key={index} value={skill} className="mr-[40px] lg:mr-[100px] ">
             <img
-              className="w-[55px] md:w-[85px] p-2 bg-[#645b5b2f] border-2 border-[#58414128] rounded shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)]"
+              className="w-[55px] md:w-[85px] p-2 bg-[#5cadd928] border-2 border-[#88909727] rounded shadow-[0_10px_20px_rgba(135,_206,_235,_0.7)]"
               src={skill.picture}
               alt=""
             />
