@@ -13,6 +13,9 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
 AOS.init();
+// lottie animation
+import Lottie from "lottie-react";
+import animationData from "../../../assets/animation-lottie/banner-lottie.json";
 
 // TODO
 // TEXT PRIMARY COLOR [text-black],  SECONDARY COLOR [text-blue-400]
@@ -25,13 +28,9 @@ const Banner = () => {
       data-aos-duration="1500"
       id="#"
     >
-      <div className="container mx-auto pt-24 px-5 sm:px-0 lg:pt-36 flex flex-col items-center sm:justify-between sm:flex-row-reverse sm:gap-10">
-        <div className="w-[300px] sm:w-[384px]">
-          <img
-            className="rounded-full"
-            src="https://i.ibb.co/b5yCbcB/IMG20231016110251.jpg"
-            alt=""
-          />
+      <div className="container mx-auto pt-24 px-5 sm:px-0 lg:pt-36 flex flex-col items-center md:justify-between sm:flex-row-reverse sm:gap-10">
+        <div className="w-full md:w-[50%]">
+          <Lottie animationData={animationData} loop={true} autoPlay={true} />
         </div>
         <div className="w-auto sm:w-8/12">
           <h3 className="text-xl lg:text-5xl text-[#564E4C] font-bold">

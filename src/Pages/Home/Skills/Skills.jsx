@@ -4,97 +4,41 @@ import Marquee from "react-fast-marquee";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
-  const itemsPerPage = 10;
-  let currentPage = 1;
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 7;
 
-  // FETCH DATA;
+  // Fetch skills data
   useEffect(() => {
     fetch("skills.json")
       .then((res) => res.json())
       .then((data) => setSkills(data));
   }, []);
 
+  // Calculate paginated data
+  const paginatedData = skills.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-  useEffect(() => {
-    renderPagination();
-  }, [skills]); // Run the pagination logic whenever skills data changes
-
-  // pagination code;
-  const displayData = (page) => {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const paginatedData = skills.slice(startIndex, endIndex);
-
-    const dataContainer = document.getElementById("dataContainer");
-    if (dataContainer) {
-      dataContainer.innerHTML = ""; // Clear existing data
-
-      paginatedData.forEach((item) => {
-        const listItem = document.createElement("div");
-        listItem.innerHTML = `
-        <div class="skillContainer">
-        <img class="skillImage" src=${item.picture} alt="" />
-        <p class="skillValue">${item.name} ${item.value}%</p>
-        </div>
-        `;
-        dataContainer.appendChild(listItem);
-      });
-    }
-  };
-
-  const renderPagination = () => {
-    const totalPages = Math.ceil(skills.length / itemsPerPage);
-    const paginationContainer = document.getElementById("pagination");
-    if (paginationContainer) {
-      paginationContainer.innerHTML = ""; // Clear existing pagination
-
-      for (let i = 1; i <= totalPages; i++) {
-        const listItem = document.createElement("li");
-        const link = document.createElement("button");
-        link.href = "#";
-        link.textContent = i;
-        if (i === currentPage) {
-          link.classList.add("active");
-        }
-        listItem.appendChild(link);
-        paginationContainer.appendChild(listItem);
-
-        link.addEventListener("click", () => {
-          currentPage = i;
-          displayData(currentPage);
-          updateActiveLink();
-        });
-
-        displayData(currentPage);
-      }
-
-      const updateActiveLink = () => {
-        const paginationLinks = document.querySelectorAll(
-          ".pagination li button"
-        );
-        paginationLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (parseInt(link.textContent) === currentPage) {
-            link.classList.add("active");
-          }
-        });
-      };
-    }
-  };
+  // Total pages for pagination
+  const totalPages = Math.ceil(skills.length / itemsPerPage);
 
   return (
     <div className="px-5 sm:px-0 mt-14 lg:pt-[150px]" id="skill">
       <div className="container mx-auto flex flex-col">
+        {/* Section Title */}
         <div
           data-aos="zoom-in"
           data-aos-duration="1900"
           className="text-center font-bold uppercase text-4xl"
         >
-          <h3>my skills</h3>
+          <h3>My Skills</h3>
         </div>
-        <div className="sm:flex sm:gap-x-5 justify-between mt-3 sm:mt-10">
-          <div className="text-[18px] sm:w-[50%] h-[460px] overflow-y-scroll scrollbar">
-            <span className="uppercase text-lg font-bold">skills details</span>
+
+        <div className="flex flex-col gap-x-24 md:flex-row md:justify-between mt-3 sm:mt-10">
+          {/* Skills Details Section */}
+          <div className="text-[18px] w-full md:w-6/12">
+            <span className="uppercase text-lg font-bold">Skills Details</span>
             <p>
               With proficiency in HTML, CSS, and JavaScript, as well as
               frameworks like React and Next.js, I bring a comprehensive skill
@@ -124,32 +68,65 @@ const Skills = () => {
               Overall, I bring a versatile skill set and a commitment to
               excellence in web development, combining frontend aesthetics with
               backend functionality to deliver dynamic and efficient digital
-              solutions
+              solutions.
             </p>
           </div>
-          <div className="flex flex-col justify-between w-[100%] sm:w-[390px] lg:w-[478px]">
-            <ul
-              className="grid sm:grid-cols-2 sm:gap-x-10 gap-y-3 sm:gap-y-0 h-[85%] my-5"
-              id="dataContainer"
-            ></ul>
-            {/* PAGINATION BUTTON */}
-            <ul
-              className="flex justify-center gap-2 paginationButton"
-              id="pagination"
-            ></ul>
+
+          {/* Skills Display Section */}
+          <div className="flex flex-col justify-between w-full md:w-6/12">
+            <div className="grid md:grid-cols-1 sm:gap-x-5 gap-y-3">
+              {paginatedData.map((skill, index) => (
+                <div
+                  key={index}
+                  className="skillContainer flex items-center gap-3"
+                >
+                  <img
+                    className="skillImage w-[50px] h-[50px] rounded-full shadow-lg"
+                    src={skill.picture}
+                    alt={skill.name}
+                  />
+                  <p className="skillValue text-lg font-medium text-gray-700">
+                    {skill.name} <span className="text-blue-500">{skill.value}%</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            <ul className="flex justify-center gap-2 mt-5">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <li key={page}>
+                  <button
+                    onClick={() => setCurrentPage(page)}
+                    className={`px-3 py-1 border rounded ${currentPage === page
+                        ? "bg-blue-500 text-white"
+                        : "bg-gray-200 text-gray-700"
+                      }`}
+                  >
+                    {page}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-      {/* marquise */}
+
+      {/* Skills Marquee */}
       <Marquee className="mt-10">
         {skills.map((skill, index) => (
-          <div key={index} value={skill} className="mr-[40px] lg:mr-[100px] ">
+          <div
+            key={index}
+            className="mr-[40px] lg:mr-[100px] flex flex-col items-center"
+          >
             <img
-              className="w-[55px] md:w-[85px] p-2 bg-[#5cadd928] border-2 border-[#88909727] rounded shadow-[0_10px_20px_rgba(135,_206,_235,_0.7)]"
+              className="w-[55px] md:w-[85px] p-2 bg-[#5cadd928] border-2 border-[#88909727] rounded-full shadow-md"
               src={skill.picture}
-              alt=""
+              alt={skill.name}
             />
-            <p className="text-[8px] md:text-sm text-center uppercase font-light sg:font-mono text-blue-400">{skill.name}</p>
+            <p className="text-[8px] md:text-sm text-center uppercase font-light sg:font-mono text-blue-400">
+              {skill.name}
+            </p>
           </div>
         ))}
       </Marquee>

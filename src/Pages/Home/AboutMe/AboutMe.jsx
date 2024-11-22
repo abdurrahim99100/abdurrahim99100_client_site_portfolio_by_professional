@@ -1,64 +1,60 @@
 import { FaDownload } from "react-icons/fa";
-// aos style import;
+import aboutImage from '../../../assets/about-photo.png';
+// AOS style import
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-AOS.init();
+import "aos/dist/aos.css";
 
-// TODO
-// TEXT PRIMARY COLOR [text-black],  SECONDARY COLOR [text-blue-400]
+// Initialize AOS
+AOS.init();
 
 const AboutMe = () => {
   return (
     <div id="about" className="container mx-auto px-5 sm:px-0 pt-10 sm:pt-[150px]">
       <div
-        data-aos="zoom-in"
-        data-aos-duration="1900"
+        data-aos="fade-up"
+        data-aos-duration="1200"
         className="text-center font-bold uppercase text-4xl mb-5 sm:mb-10"
       >
-        <h3>About Me</h3>
+        <h3 className="text-gray-900">About Me</h3>
       </div>
-      <div className="sm:flex justify-between gap-10">
-        <div
-          data-aos="zoom-in-right"
-          data-aos-duration="1800"
-          className="w-full sm:w-6/12 h-[360px] space-x-8 overflow-y-scroll scrollbar"
-        >
-          <p className="text-2xl font-light">
-            Abdur Rahim is a skilled MERN stack web developer with expertise in
-            ReactJS, Typescript, MongoDB, ExpressJS, NodeJS, and various other
-            technologies related to JavaScript and Typescript. With a passion
-            for crafting dynamic and interactive web applications, Rahim brings
-            creativity and proficiency to every project. With a keen eye for
-            detail and a strong problem-solving mindset, Rahim is committed to
-            delivering high-quality, efficient, and user-friendly solutions.
-            From front-end development to back-end implementation, Rahim
-            possesses the comprehensive skills necessary to build robust and
-            scalable web applications.
-          </p>
+      <div className="flex flex-col gap-5 md:flex-row">
+        {/* image dev */}
+        <div className="w-full md:w-6/12 overflow-hidden">
+          <img src={aboutImage} alt="" className="w-full h-auto block" />
         </div>
+
+        {/* Text div */}
         <div
-          data-aos="zoom-in-left"
-          data-aos-duration="1800"
-          className="text-2xl font-light mt-5 lg:mt-0"
+          className="w-full md:w-6/12 flex flex-col justify-end"
+          data-aos="fade-right"
+          data-aos-duration="1500"
         >
-          <h3 className="text-[#564E4C] text-3xl font-semibold uppercase">
-            I am web developer
-          </h3>
-          <ul className="list-inside list-disc leading-10">
-            <li>Name: Abdur Rahim</li>
-            <li>Nick Name: (Mithu)</li>
-            <li>Gender: Mail</li>
-            <li>Age: 24</li>
-            <li>Nationality: Bangladesh</li>
-            <li>Address: Nazirpur, pirojpur, Bangladesh</li>
-          </ul>
+          <p className="text-lg text-gray-700 leading-relaxed">
+
+            Abdur Rahim is a skilled MERN stack web developer with expertise in ReactJS, TypeScript, MongoDB, ExpressJS, and NodeJS. He is passionate about building dynamic, scalable web applications and excels in both front-end and back-end development. Rahim is committed to delivering high-quality, efficient solutions with a strong focus on user experience and technical excellence.
+          </p>
+
+
+          <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono">
+            <code>
+              {`
+  function details() {
+
+  const Full_Name = 'Abdur Rahim';
+  let Occupation = 'Frontend Web Application Developer';
+  const Email = 'abdurrahim99100@gmail.com';
+  const Contact_Number = '+88 01857-400322'  
+  
+  }
+             `}
+            </code>
+          </pre>
           <a
-            className="w-[290px] p-0 mt-5 text-xl rounded flex items-center gap-2 text-white border-2 uppercase btn bg-blue-400"
+            className="w-full sm:w-[290px] p-3 mt-6 text-xl rounded-full flex items-center justify-center gap-3 text-white bg-blue-500 hover:bg-blue-600 transition duration-300"
             href="abdur-rahim-resume.pdf"
             download
           >
-            <span>downloads resume</span> <FaDownload />{" "}
+            <span>Download Resume</span> <FaDownload />
           </a>
         </div>
       </div>
