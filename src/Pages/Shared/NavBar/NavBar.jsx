@@ -28,7 +28,7 @@ const NavBar = () => {
                 <Link to='blog'>blog</Link>
             </li>
             <li className="visited-link">
-                <Link to='post'>post</Link>
+                <Link to='post'>review</Link>
             </li>
             {
                 user ?
@@ -66,7 +66,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal flex justify-between uppercase font-semibold">
+                <ul className="menu menu-horizontal flex  justify-between uppercase font-semibold">
                     {
                         navItems
                     }

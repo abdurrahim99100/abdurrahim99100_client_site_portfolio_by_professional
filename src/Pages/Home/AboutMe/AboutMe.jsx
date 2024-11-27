@@ -17,9 +17,9 @@ const AboutMe = () => {
       >
         <h3 className="text-gray-900">About Me</h3>
       </div>
-      <div className="flex flex-col gap-5 md:flex-row">
+      <div className="flex flex-col items-center md:flex-row">
         {/* image dev */}
-        <div className="w-full md:w-6/12 overflow-hidden">
+        <div className="w-full h-auto md:w-6/12 overflow-hidden">
           <img src={aboutImage} alt="" className="w-full h-auto block" />
         </div>
 
@@ -35,13 +35,13 @@ const AboutMe = () => {
           </p>
 
 
-          <pre className="bg-gray-100 p-4 rounded-md text-sm font-mono">
+          <pre className="bg-gray-100 p-4 rounded-md text-[12px] md:text-[14px] lg:text-[18px] font-mono">
             <code>
               {`
   function details() {
 
   const Full_Name = 'Abdur Rahim';
-  let Occupation = 'Frontend Web Application Developer';
+  let Occupation = 'Front-end Developer';
   const Email = 'abdurrahim99100@gmail.com';
   const Contact_Number = '+88 01857-400322'  
   
